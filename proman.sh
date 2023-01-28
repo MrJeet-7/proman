@@ -3,7 +3,7 @@ if [ ~/project ]
 then	
     PROJ_DIR=~/project
 else
-    mkdir ~/prpject
+    mkdir ~/project
     PROJ_DIR=~/project
 fi
 
