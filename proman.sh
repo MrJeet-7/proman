@@ -40,7 +40,7 @@ add_executable(
     else
 	echo "[×] No project name provided. Please provide a project name"
     fi
-elif [[ $1 == '--help' ]]
+elif [[ $1 == 'help' ]]
 then
     echo "
     new  -  creates a new project
@@ -75,6 +75,7 @@ then
 elif [[ $1 == 'remove' ]]
 then
     rm -rf $PROJ_DIR/$2
+    echo "$2 is removed successfully"
 else
     echo "No argument given"    
 fi

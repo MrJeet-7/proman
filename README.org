@@ -41,3 +41,10 @@ This command will build and run the demo project
 #+end_src
 
 This command will Delete the demo project
+
+*** Help
+#+begin_src bash
+  ./proman.sh help
+#+end_src
+
+Prints all available commamds
