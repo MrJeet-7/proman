@@ -69,6 +69,9 @@ then
     make 
     ./$2
     cd $Last_Dir
+elif [[ $1 == 'remove' ]]
+then
+    rm -rf $PROJ_DIR/$2
 else
     echo "No argument given"    
 fi

@@ -17,20 +17,27 @@ It will automatically create a project directory in your home folder
   ./proman.sh new demo
 #+end_src
 
-By executing this command it will generate a folder named demo and inside the folder it will create bin, src, CMakeLists.txt files/folders inside src folder a simple hellow world program is given. It will also create a git repo on main branch.
+This command will generate a folder in project directory named demo and inside the folder it will create bin, src, CMakeLists.txt files/folders inside src folder a simple hellow world program will be given. It will also create a git repo on main branch.
 
-it will also compile the program immidiatly after create the project
+It will also compile the program immidiatly after creating the project
 
 *** To build a project:
 #+begin_src bash
   ./proman.sh build demo
 #+end_src
 
-By executing this command it will build the demo project in it's bin file 
+This command will build the demo project in it's bin file 
 
 *** To Run a project:
 #+begin_src bash
   ./proman.sh run demo
 #+end_src
 
-By executing thia command it will build and run the demo project 
+This command will build and run the demo project 
+
+*** To Remove/Delete a project:
+#+begin_src bash
+  ./proman.sh remove demo
+#+end_src
+
+This command will Delete the demo project
