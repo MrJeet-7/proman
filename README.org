@@ -7,14 +7,30 @@ A C++ project Manager ( I hope to make it one day )
 
 Right now it can only make a project and init a git repo
 
-to crate a project:
+
+** Usage
+
+It will automatically create a project directory in your home folder
+
+*** To crate a project:
 #+begin_src bash
   ./proman.sh new demo
 #+end_src
 
-By executing this command it will generate a folder named demo and inside the folder it will create bin, src, CMakeLists.txt files/folders inside src folder a simple hellow world program it given.
+By executing this command it will generate a folder named demo and inside the folder it will create bin, src, CMakeLists.txt files/folders inside src folder a simple hellow world program is given. It will also create a git repo on main branch.
 
 it will also compile the program immidiatly after create the project
-( The "Hellow World" one only once )
 
+*** To build a project:
+#+begin_src bash
+  ./proman build demo
+#+end_src
 
+By executing this command it will build the demo project in it's bin file 
+
+*** To Run a project:
+#+begin_src bash
+  ./proman run demo
+#+end_src
+
+By executing thia command it will build and run the demo project 
