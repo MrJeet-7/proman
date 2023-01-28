@@ -21,6 +21,8 @@ add_executable(
 	\${PROJECT_NAME}
 	src/main.cpp
 	)" >> ./$2/CMakeLists.txt
+	touch ./$2/.gitignore
+	echo "bin/" >> ./$2/.gitignore
 	cd ./$2/bin/
 	cmake ..
 	make
