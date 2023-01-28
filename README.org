@@ -7,7 +7,7 @@ Is a C++ project Manager ( I hope to make it one day )
 
 ** Fetures??
 
-Right now it can only make a project name init a git repo
+Right now it can only make a project and init a git repo
 
 to crate a project:
 #+begin_src bash
