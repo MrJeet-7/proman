@@ -1,18 +1,26 @@
 #!/bin/bash
+if [ ~/project ]
+then	
+    PROJ_DIR=~/project
+else
+    mkdir ~/prpject
+    PROJ_DIR=~/project
+fi
+
 if [[ $1 == 'new' ]]
 then
     if [ $2 ]
     then
-	mkdir ./$2 ./$2/src ./$2/bin
-	touch ./$2/src/main.cpp
+	mkdir $PROJ_DIR/$2 $PROJ_DIR/$2/src $PROJ_DIR/$2/bin
+	touch $PROJ_DIR/$2/src/main.cpp
 	echo "#include <iostream>
 
 int main() {
     std::cout << \"hellow, world\" << std::endl;
     return 0;
-}" >> ./$2/src/main.cpp
+}" >> $PROJ_DIR/$2/src/main.cpp
 
-	touch ./$2/CMakeLists.txt
+	touch $PROJ_DIR/$2/CMakeLists.txt
 	echo "cmake_minimum_required(VERSION 3.11)
 
 project($2)
@@ -20,28 +28,52 @@ project($2)
 add_executable(
 	\${PROJECT_NAME}
 	src/main.cpp
-	)" >> ./$2/CMakeLists.txt
-	touch ./$2/.gitignore
-	echo "bin/" >> ./$2/.gitignore
-	cd ./$2/bin/
+	)" >> $PROJ_DIR/$2/CMakeLists.txt
+
+	touch $PROJ_DIR/$2/.gitignore
+	echo "bin/" >> $PROJ_DIR/$2/.gitignore
+	Last_Dir=$PWD
+	cd $PROJ_DIR/$2/bin/
 	cmake ..
 	make
 	cd ../
 	git init -b main
-	cd ../
+	git add .
+	git commit -m "Project Setup Commit"
+	cd $Last_Dir
 	echo "[✓] Project '$2' Created Successfully!"
     else
 	echo "[×] No project name provided. Please provide a project name"
-	echo "[×] Project creation stopped"
     fi
 elif [[ $1 == '--help' ]]
 then
     echo "
     new  -  creates a new project
-     use: ./proman new (project_name)
+     use: ./proman.sh new (project_name)
+    
+    build - Build your projecr
+     use: ./proman.sh build (prpject_name)
+
+    run - Build and Run your project
+     use: ./proman.sh run (project_name)
 
     help  -  prints this message
 "
+elif [[ $1 == 'build' ]]
+then
+    Last_Dir=$PWD
+    cd $PROJ_DIR/$2/bin/
+    cmake ..
+    make
+    cd $Last_Dir
+elif [[ $1 == 'run' ]]
+then
+    Last_Dir=$PWD
+    cd $PROJ_DIR/$2/bin/
+    cmake ..
+    make 
+    ./$2
+    cd $Last_Dir
 else
     echo "No argument given"    
 fi
