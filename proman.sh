@@ -1,11 +1,6 @@
 #!/bin/bash
-if [ ~/project ]
-then	
-    PROJ_DIR=~/project
-else
-    mkdir ~/project
-    PROJ_DIR=~/project
-fi
+mkdir -p ~/project
+PROJ_DIR=~/project
 
 if [[ $1 == 'new' ]]
 then
