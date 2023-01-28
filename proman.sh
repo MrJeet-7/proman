@@ -1,4 +1,13 @@
 #!/bin/bash
+
+# Reset
+Color_Off='\033[0m'       # Text Reset
+
+# Regular Colors
+Red='\033[0;31m'          # Red
+Green='\033[0;32m'        # Green
+Yellow='\033[0;33m'       # Yellow
+
 mkdir -p ~/project
 PROJ_DIR=~/project
 
@@ -36,13 +45,13 @@ add_executable(
 	git add .
 	git commit -m "Project Setup Commit"
 	cd $Last_Dir
-	echo "[✓] Project '$2' Created Successfully!"
+	echo -e "${Green}[✓] ${Color_Off}Project ${Yellow}'$2' ${Color_Off}Created Successfully!"
     else
-	echo "[×] No project name provided. Please provide a project name"
+	echo -e "${Red}[×] No project name provided. Please provide a project name${Color_Off}"
     fi
 elif [[ $1 == 'help' ]]
 then
-    echo "
+    echo -e "${Yellow}
     new  -  creates a new project
      use: ./proman.sh new (project_name)
     
@@ -55,7 +64,7 @@ then
     remove - Remove/Delete a project
      use: ./proman.sh remove (project_name)
 
-    help  -  prints this message
+    help  -  prints this message ${Color_Off}
 "
 elif [[ $1 == 'build' ]]
 then
@@ -75,7 +84,7 @@ then
 elif [[ $1 == 'remove' ]]
 then
     rm -rf $PROJ_DIR/$2
-    echo "$2 is removed successfully"
+    echo -e "${Green}[✓] ${Color_Off}Project ${Red}'$2' ${Color_Off}is removed successfully"
 else
-    echo "No argument given"    
+    echo -e "${Red}No argument given${Color_Off}"    
 fi
