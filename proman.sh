@@ -52,6 +52,9 @@ then
     run - Build and Run your project
      use: ./proman.sh run (project_name)
 
+    remove - Remove/Delete a project
+     use: ./proman.sh remove (project_name)
+
     help  -  prints this message
 "
 elif [[ $1 == 'build' ]]
