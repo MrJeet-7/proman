@@ -1,0 +1,23 @@
+#+title: Project Manager
+#+author: MrJeet-7
+
+* Proman ( Project Manager )
+
+Is a C++ project Manager ( I hope to make it one day )
+
+** Fetures??
+
+Right now it can only make a project name init a git repo
+
+to crate a project:
+#+begin_src bash
+  ./proman.sh new demo
+#+end_src
+
+By executing this command it will generate a folder named demo and inside the folder it will create bin, src, CMakeLists.tx files/folders
+inside src folder a simple hellow world program it given.
+
+it will also compile the program immidiatly after create the project
+( The "Hellow World" one only )
+
+
