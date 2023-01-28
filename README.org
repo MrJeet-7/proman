@@ -23,14 +23,14 @@ it will also compile the program immidiatly after create the project
 
 *** To build a project:
 #+begin_src bash
-  ./proman build demo
+  ./proman.sh build demo
 #+end_src
 
 By executing this command it will build the demo project in it's bin file 
 
 *** To Run a project:
 #+begin_src bash
-  ./proman run demo
+  ./proman.sh run demo
 #+end_src
 
 By executing thia command it will build and run the demo project 
